@@ -7,6 +7,7 @@ class Hft1(QCAlgorithm):
         self.SetStartDate(2021, 5, 2)  # Set Start Date
         self.SetCash(100000)  # Set Strategy Cash
         # self.AddEquity("SPY", Resolution.Minute)
+        self.AddUniverse(self.CoarseSelection1, self.FineSelection1)
 
     def OnData(self, data):
         """OnData event is the primary entry point for your algorithm. Each new data point will be pumped in here.
@@ -16,3 +17,9 @@ class Hft1(QCAlgorithm):
         # if not self.Portfolio.Invested:
         #     self.SetHoldings("SPY", 1)
         self.Debug("Purchased Stock")
+
+    def CoarseSelection1(self, coarse):
+        pass
+
+    def FineSelection1(self, fine):
+        pass
